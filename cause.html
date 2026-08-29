@@ -132,22 +132,63 @@
 </div>
 </div>
 </header>
-<!-- NavigationDrawer (Mobile) -->
+<!-- Navigation Drawer (Mobile) -->
 <div class="md:hidden">
-<!-- Mobile Header Placeholder for visual consistency -->
-<div class="flex justify-between items-center h-16 px-margin-mobile border-b border-outline-variant bg-surface sticky top-0 z-40">
-<div class="font-title-sm text-title-sm text-primary flex items-center gap-2">
-<span class="material-symbols-outlined filled-icon" data-icon="volunteer_activism">volunteer_activism</span>
-                Vasudhaiva Kulam
-            </div>
-<button class="text-primary"><span class="material-symbols-outlined" data-icon="menu">menu</span></button>
+<!-- Mobile Header to trigger drawer -->
+<header class="flex items-center justify-between p-4 bg-surface sticky top-0 z-40 border-b border-outline-variant shadow-sm">
+<span class="font-title-sm text-title-sm text-primary">Vasudhaiva Kulam</span>
+<button class="p-2 text-on-surface" id="menuBtn"><span class="material-symbols-outlined">menu</span></button>
+</header>
+<!-- Drawer Overlay -->
+<div class="fixed inset-0 bg-on-background/50 z-50 hidden transition-opacity opacity-0" id="drawerOverlay"></div>
+<!-- Drawer Content -->
+<nav class="bg-surface dark:bg-surface-container-high text-primary font-body-lg text-body-lg h-full w-80 shadow-xl fixed inset-y-0 left-0 z-[60] flex flex-col p-6 transform -translate-x-full transition-transform duration-300" id="navDrawer">
+<!-- Header -->
+<div class="flex items-center justify-between mb-8 pb-4 border-b border-outline-variant">
+<div>
+<h2 class="font-headline-md-mobile text-headline-md-mobile text-primary">Vasudhaiva Kulam</h2>
+<p class="text-sm text-on-surface-variant">Global Kinship</p>
 </div>
-<!-- Drawer Content (Hidden by default, shown conceptually here) -->
-<!--
-        <div class="fixed inset-y-0 left-0 z-[60] flex flex-col p-6 bg-surface dark:bg-surface-container-high h-full w-80 shadow-xl">
-             ... Drawer Content from JSON ...
-        </div>
-        -->
+<button class="p-2 text-on-surface-variant" id="closeDrawer"><span class="material-symbols-outlined">close</span></button>
+</div>
+<!-- Tabs -->
+<ul class="flex flex-col gap-2 flex-grow">
+<li>
+<a class="flex items-center gap-4 p-3 bg-primary-container text-on-primary-container rounded-lg font-bold scale-98" href="#">
+<span class="material-symbols-outlined">home</span>
+                        Home
+                    </a>
+</li>
+<li>
+<a class="flex items-center gap-4 p-3 text-on-surface-variant hover:bg-surface-container-low hover:bg-primary-fixed-dim transition-all rounded-lg" href="#causes">
+<span class="material-symbols-outlined">volunteer_activism</span>
+                        Causes
+                    </a>
+</li>
+<li>
+<a class="flex items-center gap-4 p-3 text-on-surface-variant hover:bg-surface-container-low hover:bg-primary-fixed-dim transition-all rounded-lg" href="#impact">
+<span class="material-symbols-outlined">analytics</span>
+                        Impact
+                    </a>
+</li>
+<li>
+<a class="flex items-center gap-4 p-3 text-on-surface-variant hover:bg-surface-container-low hover:bg-primary-fixed-dim transition-all rounded-lg" href="#contact">
+<span class="material-symbols-outlined">mail</span>
+                        Contact
+                    </a>
+</li>
+</ul>
+<!-- Footer / CTA -->
+<div class="mt-auto border-t border-outline-variant pt-4 flex flex-col gap-4">
+<button class="flex items-center justify-center gap-2 p-2 rounded-lg text-on-surface-variant hover:bg-surface-container-low transition-colors">
+<span class="material-symbols-outlined text-sm">language</span>
+<span>Hindi Toggle</span>
+</button>
+<button class="bg-primary-container text-on-primary-container w-full py-3 rounded-full font-bold text-center shadow">
+                    Donate Now
+                </button>
+</div>
+</nav>
 </div>
 <!-- Main Content Canvas -->
 <main class="flex-grow flex flex-col w-full max-w-container-max mx-auto px-margin-mobile md:px-gutter py-margin-desktop md:py-section-gap gap-12">
@@ -286,4 +327,5 @@
 </nav>
 </div>
 </footer>
+<script src="src/script.js"></script>
 </body></html>
