@@ -7,11 +7,13 @@ const drawerOverlay = document.getElementById('drawerOverlay');
 function toggleDrawer() {
     const isClosed = navDrawer.classList.contains('-translate-x-full');
     if (isClosed) {
+        menuBtn.ariaExpanded = true;
         navDrawer.classList.remove('-translate-x-full');
         drawerOverlay.classList.remove('hidden');
         // slight delay to allow display block to apply before opacity transition
         setTimeout(() => drawerOverlay.classList.remove('opacity-0'), 10);
     } else {
+        menuBtn.ariaExpanded = false;
         navDrawer.classList.add('-translate-x-full');
         drawerOverlay.classList.add('opacity-0');
         setTimeout(() => drawerOverlay.classList.add('hidden'), 300); // match transition duration
