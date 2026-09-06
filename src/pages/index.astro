@@ -1,0 +1,337 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+---
+
+<BaseLayout title="Home - Vasudhaiva Kulam">
+  <main class="flex-grow">
+    <!-- Hero Section -->
+    <section
+      class="relative w-full min-h-[819px] flex items-center justify-center overflow-hidden"
+    >
+      <!-- Background Image -->
+      <div
+        class="absolute inset-0 z-0 bg-cover bg-center"
+        data-alt="A compelling, high-resolution photograph capturing genuine community interaction in rural India. The scene shows diverse individuals working together outdoors, bathed in warm, natural golden-hour sunlight. The atmosphere feels hopeful, energetic, and unified. Colors highlight deep greens of nature, rich saffron hues of clothing accents, and navy blue elements, conveying a modern ethno-centric aesthetic aligned with an NGO's mission of Global Kinship."
+        style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuDapi81x9vrPmt2AyLV4lIzQb7ete6_Sw80qAD5L7TFqmSrqRegNr5haeItvK_eNpCLLzWnCxO-vf1DYFKfwMpVTvJU_Lww1QgxdD0XasG5PSAdlS4rGWK9qaYWrE_khxV7O7nkDwqnN_P5TpFecWIZ9dkuyZgnmuk3AFzxEwmcDrLS07qC38Qad6Xbbvxy6rSfzbeQ3HWYbqWBO9N89i_lvOci3bGer6y2Z3l_QUCDQo7EihtI6ZGI')"
+      >
+        <!-- Gradient Overlay for readability -->
+        <div
+          class="absolute inset-0 bg-gradient-to-r from-on-background/90 via-on-background/60 to-transparent"
+        >
+        </div>
+      </div>
+      <!-- Content Container -->
+      <div
+        class="relative z-10 max-w-container-max mx-auto px-gutter w-full flex flex-col gap-6 text-on-primary md:w-2/3 lg:w-1/2 justify-start items-start"
+      >
+        <div
+          class="inline-flex items-center gap-2 px-3 py-1 bg-surface-container/20 backdrop-blur-md rounded-full border border-on-primary/30"
+        >
+          <span class="w-2 h-2 rounded-full bg-primary-container animate-pulse"
+          ></span>
+          <span
+            class="font-sans text-label-caps font-semibold uppercase tracking-wider text-on-primary"
+            >वसुधैव कुलम्</span
+          >
+        </div>
+        <h1
+          class="font-display md:font-display-lg text-display-lg font-bold text-on-primary leading-tight"
+        >
+          Global Kinship.<br />
+          <span class="text-primary-container">Local Impact.</span>
+        </h1>
+        <p
+          class="font-sans text-body-lg text-inverse-on-surface max-w-xl opacity-90"
+        >
+          Empowering communities through education, welfare, and environmental
+          stewardship. Join us in building a world where the entire earth is one
+          family.
+        </p>
+        <div class="flex flex-col sm:flex-row gap-4 mt-4 w-full sm:w-auto">
+          <button
+            class="bg-primary-container hover:bg-primary-fixed text-on-primary-container px-8 py-4 rounded-full font-bold shadow-[0_4px_12px_rgba(255,153,51,0.3)] hover:shadow-[0_8px_24px_rgba(255,153,51,0.5)] transition-all flex items-center justify-center gap-2 transform hover:-translate-y-1"
+          >
+            Donate (दान करें)
+            <span
+              class="material-symbols-outlined"
+              data-weight="fill"
+              style="font-variation-settings: 'FILL' 1;">favorite</span
+            >
+          </button>
+          <button
+            class="bg-surface/10 hover:bg-surface/20 backdrop-blur-sm border border-on-primary/50 text-on-primary px-8 py-4 rounded-full font-semibold transition-all flex items-center justify-center gap-2 transform hover:-translate-y-1"
+          >
+            Volunteer (स्वयंसेवक बनें)
+            <span class="material-symbols-outlined">group_add</span>
+          </button>
+        </div>
+      </div>
+    </section>
+    <!-- Stats Banner (Overlapping Hero) -->
+    <section
+      class="relative z-20 max-w-container-max mx-auto px-gutter -mt-16 md:-mt-12 mb-section-gap"
+    >
+      <div
+        class="bg-surface rounded-xl shadow-[0_4px_24px_rgba(0,0,128,0.08)] p-6 md:p-8 flex flex-col md:flex-row justify-between items-center gap-8 border border-outline-variant/30 backdrop-blur-xl"
+      >
+        <div
+          class="flex items-center gap-4 text-center md:text-left flex-1 justify-center md:justify-start"
+        >
+          <div
+            class="p-3 bg-secondary-container/20 rounded-full text-secondary"
+          >
+            <span
+              class="material-symbols-outlined text-3xl"
+              data-weight="fill"
+              style="font-variation-settings: 'FILL' 1;">school</span
+            >
+          </div>
+          <div>
+            <div
+              class="font-display text-headline-md text-secondary counter"
+              data-target="5000"
+            >
+              0
+            </div>
+            <div
+              class="font-sans text-body-md text-on-surface-variant font-semibold"
+            >
+              Students Mentored
+            </div>
+          </div>
+        </div>
+        <div class="hidden md:block w-px h-16 bg-outline-variant/50"></div>
+        <div
+          class="flex items-center gap-4 text-center md:text-left flex-1 justify-center md:justify-center"
+        >
+          <div
+            class="p-3 bg-secondary-container/20 rounded-full text-secondary"
+          >
+            <span
+              class="material-symbols-outlined text-3xl"
+              data-weight="fill"
+              style="font-variation-settings: 'FILL' 1;">park</span
+            >
+          </div>
+          <div>
+            <div
+              class="font-display text-headline-md text-secondary counter"
+              data-target="12000"
+            >
+              0
+            </div>
+            <div
+              class="font-sans text-body-md text-on-surface-variant font-semibold"
+            >
+              Trees Planted
+            </div>
+          </div>
+        </div>
+        <div class="hidden md:block w-px h-16 bg-outline-variant/50"></div>
+        <div
+          class="flex items-center gap-4 text-center md:text-left flex-1 justify-center md:justify-end"
+        >
+          <div class="p-3 bg-tertiary-container/20 rounded-full text-tertiary">
+            <span
+              class="material-symbols-outlined text-3xl"
+              data-weight="fill"
+              style="font-variation-settings: 'FILL' 1;">groups</span
+            >
+          </div>
+          <div>
+            <div
+              class="font-display text-headline-md text-tertiary counter"
+              data-target="50"
+            >
+              0
+            </div>
+            <div
+              class="font-sans text-body-md text-on-surface-variant font-semibold"
+            >
+              Villages Reached
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- Pillars Grid (3-column) -->
+    <section
+      class="py-section-gap px-gutter max-w-container-max mx-auto"
+      id="causes"
+    >
+      <div class="text-center mb-16">
+        <h2
+          class="font-display md:font-display text-headline-md font-semibold text-on-surface mb-4"
+        >
+          Our Core Initiatives
+        </h2>
+        <p
+          class="font-sans text-body-lg text-on-surface-variant max-w-2xl mx-auto"
+        >
+          Focused action areas designed to create lasting, sustainable impact in
+          marginalized communities.
+        </p>
+      </div>
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+        <!-- Pillar 1 -->
+        <div
+          class="bg-surface rounded-xl overflow-hidden shadow-[0_4px_12px_rgba(0,0,128,0.05)] border border-outline-variant/20 hover:shadow-[0_8px_24px_rgba(0,0,128,0.1)] transition-all duration-300 group cursor-pointer flex flex-col"
+        >
+          <div class="h-48 overflow-hidden relative">
+            <img
+              class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+              alt="A brightly lit classroom in rural India where enthusiastic young children are learning, sitting at desks. The teacher, a young woman, is smiling and pointing at a blackboard. The mood is uplifting and educational. The lighting is natural, and the aesthetic features subtle saffron and navy blue accents in the environment, maintaining a modern, clean, ethno-centric corporate style."
+              src="https://lh3.googleusercontent.com/aida-public/AB6AXuDJv_SQ76B13Z2ju0W6MRTiuGxKRLNdmSXFtnB7MA-qDN-o0dRZIMtXtYX3RUEduSvqU1bHhHpyK_BxWcoXjkWGOL3ZuuKr7nKq3dl-92DsPiWWzhKJBeF8r-v81f7JsITC0DiEUEIm8yWCNhWGLelqusXhwjWP4SFP98sUJP1t7I_pOhNUEoHz-2TfQMxhbqb5dXDOJasy8rWkYp1coZtPUZtjqRLCASWNuMCE00NpQU54bY-9GDZK"
+            />
+            <div
+              class="absolute top-4 left-4 bg-surface/90 backdrop-blur px-3 py-1 rounded-full flex items-center gap-2"
+            >
+              <span class="material-symbols-outlined text-sm text-tertiary"
+                >auto_stories</span
+              >
+              <span class="text-xs font-semibold text-tertiary">Education</span>
+            </div>
+          </div>
+          <div class="p-6 flex-grow flex flex-col">
+            <h3
+              class="font-display text-title-sm font-semibold text-on-surface mb-2"
+            >
+              Education (शिक्षा)
+            </h3>
+            <p
+              class="font-sans text-body-md text-on-surface-variant mb-6 flex-grow"
+            >
+              Providing quality education, resources, and mentorship to
+              underprivileged youth to break the cycle of poverty.
+            </p>
+            <a
+              class="inline-flex items-center gap-2 text-primary font-semibold hover:text-primary-container transition-colors mt-auto"
+              href="#"
+            >
+              Learn More <span class="material-symbols-outlined text-sm"
+                >arrow_forward</span
+              >
+            </a>
+          </div>
+        </div>
+        <!-- Pillar 2 -->
+        <div
+          class="bg-surface rounded-xl overflow-hidden shadow-[0_4px_12px_rgba(0,0,128,0.05)] border border-outline-variant/20 hover:shadow-[0_8px_24px_rgba(0,0,128,0.1)] transition-all duration-300 group cursor-pointer flex flex-col"
+        >
+          <div class="h-48 overflow-hidden relative">
+            <img
+              class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+              alt="A community health camp in a village setting. A female doctor is examining a patient with care, surrounded by a supportive community. The scene is lit with warm, bright natural light, exuding trust and wellness. Deep greens and earthy tones dominate, aligning with a professional, human-first NGO visual identity."
+              src="https://lh3.googleusercontent.com/aida-public/AB6AXuA4Wr_EpVcfpphLGnhTMMSIUHCzCFApqQtFjiEEGAROZXX5BaOAuGsMzwxGcJPHwuQwfbO84u2tVExRXRuYrX2rTB7695QTeMaqsfOAx7DL_drsBwPqC1U_JwA9wdAIrt7pHZ1I2tULVCfIGhT6o3wnif310psgK33pKwWW_4BqMGWOohkoahRwiFfGxBln7m6vrI5epMDG8Jszlfw6SO1MJyR9X9kiO_Qb2V8r31gHBMASMK6yIkbD"
+            />
+            <div
+              class="absolute top-4 left-4 bg-surface/90 backdrop-blur px-3 py-1 rounded-full flex items-center gap-2"
+            >
+              <span
+                class="material-symbols-outlined text-sm text-primary-container"
+                >medical_services</span
+              >
+              <span class="text-xs font-semibold text-primary-container"
+                >Health</span
+              >
+            </div>
+          </div>
+          <div class="p-6 flex-grow flex flex-col">
+            <h3
+              class="font-display text-title-sm font-semibold text-on-surface mb-2"
+            >
+              Community Welfare (जन कल्याण)
+            </h3>
+            <p
+              class="font-sans text-body-md text-on-surface-variant mb-6 flex-grow"
+            >
+              Ensuring access to basic healthcare, sanitation, and women's
+              empowerment programs.
+            </p>
+            <a
+              class="inline-flex items-center gap-2 text-primary font-semibold hover:text-primary-container transition-colors mt-auto"
+              href="#"
+            >
+              Learn More <span class="material-symbols-outlined text-sm"
+                >arrow_forward</span
+              >
+            </a>
+          </div>
+        </div>
+        <!-- Pillar 3 -->
+        <div
+          class="bg-surface rounded-xl overflow-hidden shadow-[0_4px_12px_rgba(0,0,128,0.05)] border border-outline-variant/20 hover:shadow-[0_8px_24px_rgba(0,0,128,0.1)] transition-all duration-300 group cursor-pointer flex flex-col"
+        >
+          <div class="h-48 overflow-hidden relative">
+            <img
+              class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+              alt="A wide shot of a tree plantation drive in a semi-arid region. Volunteers of various ages are planting saplings. The sky is clear blue, and the earth is rich brown. Deep green foliage emphasizes environmental stewardship. The scene is optimistic, and bathed in bright daylight, fitting a modern ethno-centric corporate style."
+              src="https://lh3.googleusercontent.com/aida-public/AB6AXuBO8KfS9hNwcKZSosQux2X6T7zKOE-4536ocnwBqLS9aIUktb2tKsZG0-FckH44-5r3jSa_CmYGlH9HZGcEiM3IOjpyewBgJgzcg5M7FhbKp5v5bN-EG4l0fkMh7X8wbbSoI9D3Vf1x5lSzFaJRaX1hJlVbIWcIB42oFqJLvZ1iEouIwJn2VvFv5xYLTfUXZIlmoYmU0lF_jAWWfVerEVPNwfpwzuNa4ZLObFzao22tXIxNxfOSjsCp"
+            />
+            <div
+              class="absolute top-4 left-4 bg-surface/90 backdrop-blur px-3 py-1 rounded-full flex items-center gap-2"
+            >
+              <span class="material-symbols-outlined text-sm text-secondary"
+                >eco</span
+              >
+              <span class="text-xs font-semibold text-secondary"
+                >Environment</span
+              >
+            </div>
+          </div>
+          <div class="p-6 flex-grow flex flex-col">
+            <h3
+              class="font-display text-title-sm font-semibold text-on-surface mb-2"
+            >
+              Environment (पर्यावरण)
+            </h3>
+            <p
+              class="font-sans text-body-md text-on-surface-variant mb-6 flex-grow"
+            >
+              Promoting sustainable living, massive afforestation drives, and
+              water conservation techniques.
+            </p>
+            <a
+              class="inline-flex items-center gap-2 text-primary font-semibold hover:text-primary-container transition-colors mt-auto"
+              href="#"
+            >
+              Learn More <span class="material-symbols-outlined text-sm"
+                >arrow_forward</span
+              >
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <script>
+    // Counter Animation
+    const counters = document.querySelectorAll(".counter");
+    const speed = 200; // The lower the slower
+
+    counters.forEach((counter) => {
+      const updateCount = () => {
+        const target = +counter.getAttribute("data-target");
+        const count = +counter.innerText;
+        const inc = target / speed;
+
+        if (count < target) {
+          counter.innerText = Math.ceil(count + inc);
+          setTimeout(updateCount, 15);
+        } else {
+          counter.innerText = target + "+"; // Add plus sign when done
+        }
+      };
+
+      // Intersection Observer to trigger animation when in view
+      const observer = new IntersectionObserver((entries) => {
+        if (entries[0].isIntersecting) {
+          updateCount();
+          observer.disconnect(); // Run once
+        }
+      });
+      observer.observe(counter);
+    });
+  </script>
+</BaseLayout>

@@ -1,0 +1,322 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+---
+
+<BaseLayout title="About Vasudhaiva Kulam">
+  <main class="flex-grow">
+    <!-- Hero Section -->
+    <section
+      class="py-section-gap px-gutter bg-surface-container-low relative overflow-hidden"
+    >
+      <div class="max-w-container-max mx-auto text-center relative z-10">
+        <h1
+          class="font-display text-display-lg md:font-display md:text-display-lg text-primary mb-6"
+        >
+          About Us <span class="text-on-surface-variant opacity-70">|</span>
+          <span class="font-normal">हमारे बारे में</span>
+        </h1>
+        <p
+          class="font-sans text-body-lg text-on-surface max-w-3xl mx-auto leading-relaxed"
+        >
+          Rooted in the philosophy of 'Vasudhaiva Kutumbakam' (The World is One
+          Family), we strive to build a global kinship through education,
+          empowerment, and sustainable community development in India.
+        </p>
+      </div>
+    </section>
+    <!-- Genesis & Mission (Bento Grid) -->
+    <section class="py-section-gap px-gutter max-w-container-max mx-auto">
+      <div class="grid grid-cols-1 md:grid-cols-12 gap-8">
+        <!-- Genesis Story -->
+        <div
+          class="md:col-span-7 bg-surface rounded-xl p-8 border border-outline-variant/30 shadow-[0_4px_12px_rgba(0,0,128,0.05)]"
+        >
+          <div class="flex items-center gap-3 mb-6">
+            <span
+              class="material-symbols-outlined text-primary text-3xl"
+              data-icon="history_edu"
+              data-weight="fill"
+              style="font-variation-settings: 'FILL' 1;">history_edu</span
+            >
+            <h2 class="font-display text-headline-md text-on-surface">
+              Our Genesis <span
+                class="text-on-surface-variant font-normal text-xl ml-2"
+                >हमारी शुरुआत</span
+              >
+            </h2>
+          </div>
+          <div
+            class="prose max-w-none text-on-surface-variant font-sans text-body-md space-y-4"
+          >
+            <p>
+              Founded in 2015 by a group of passionate educators and social
+              workers in rural Rajasthan, Vasudhaiva Kulam began with a simple
+              belief: every child deserves access to quality education,
+              regardless of their socio-economic background.
+            </p>
+            <p>
+              What started as a small evening learning center under a banyan
+              tree has now blossomed into a comprehensive NGO supporting
+              thousands of families across three states, providing holistic
+              development programs that bridge traditional wisdom with modern
+              opportunities.
+            </p>
+          </div>
+          <img
+            class="w-full h-64 object-cover rounded-lg mt-6 shadow-sm"
+            alt="A roup of Indian children sitting in a circle under a large, ancient Banyan tree, engaged in an outdoor learning session. The lighting is warm golden hour sunlight filtering through the leaves, creating a hopeful, community-focused, and vibrant modern aesthetic consistent with a professional NGO brand."
+            src="https://lh3.googleusercontent.com/aida-public/AB6AXuDTEZRHKuHBvPAJZP2UWW1pp3F4n0b2koRTSZOOpNnYha67RYAQ1ZHmJpjw8laTCE5cNgcwbkKAcOzL77l3wq6RICD9XNErDbFkIbp4TrCOmhjYtHzOrGk2gGe6QCmgMG0nUyPIR8aiXK1utuYWHYU_bYeaFHMYgRBuX5Z9feUG6OpJPVDF60Zdv4bMSlrGqt14r4OYmobZOxsG3HgVHEHWjO-CvShmsiuK0Bov_js06MgrrRjcnJ_S"
+          />
+        </div>
+        <!-- Mission Statement -->
+        <div class="md:col-span-5 flex flex-col gap-8">
+          <div
+            class="bg-primary/5 rounded-xl p-8 border-l-4 border-primary h-full flex flex-col justify-center shadow-[0_4px_12px_rgba(0,0,128,0.05)]"
+          >
+            <div class="flex items-center gap-3 mb-4">
+              <span
+                class="material-symbols-outlined text-primary text-3xl"
+                data-icon="track_changes"
+                data-weight="fill"
+                style="font-variation-settings: 'FILL' 1;">track_changes</span
+              >
+              <h2 class="font-display text-headline-md text-on-surface">
+                Our Mission <span
+                  class="text-on-surface-variant font-normal text-xl ml-2"
+                  >हमारा लक्ष्य</span
+                >
+              </h2>
+            </div>
+            <p
+              class="font-sans text-body-lg text-on-surface-variant italic mb-6"
+            >
+              "To empower marginalized communities through accessible education,
+              sustainable livelihoods, and cultural preservation, fostering a
+              world where shared humanity transcends boundaries."
+            </p>
+            <div class="mt-auto space-y-3">
+              <div
+                class="flex items-center gap-3 text-on-surface font-sans text-body-md"
+              >
+                <span
+                  class="material-symbols-outlined text-secondary"
+                  data-icon="check_circle">check_circle</span
+                > Accessible Education (सुलभ शिक्षा)
+              </div>
+              <div
+                class="flex items-center gap-3 text-on-surface font-sans text-body-md"
+              >
+                <span
+                  class="material-symbols-outlined text-secondary"
+                  data-icon="check_circle">check_circle</span
+                > Sustainable Livelihoods (सतत आजीविका)
+              </div>
+              <div
+                class="flex items-center gap-3 text-on-surface font-sans text-body-md"
+              >
+                <span
+                  class="material-symbols-outlined text-secondary"
+                  data-icon="check_circle">check_circle</span
+                > Cultural Preservation (सांस्कृतिक संरक्षण)
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- Team Section -->
+    <section
+      class="py-section-gap px-gutter bg-surface-container-lowest max-w-container-max mx-auto border-t border-outline-variant/20"
+    >
+      <div class="text-center mb-12">
+        <h2 class="font-display text-headline-md text-primary mb-2">
+          The People Behind the Mission
+        </h2>
+        <p class="font-sans text-body-lg text-on-surface-variant">हमारी टीम</p>
+      </div>
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+        <!-- Team Member 1 -->
+        <div
+          class="group bg-surface rounded-xl overflow-hidden shadow-[0_4px_12px_rgba(0,0,128,0.05)] border border-outline-variant/20 hover:shadow-lg transition-all duration-300"
+        >
+          <img
+            alt="Anjali Sharma"
+            class="w-full h-72 object-cover object-top"
+            data-alt="A professional, warm, high-resolution portrait of a middle-aged Indian woman wearing a subtle, elegant saree, smiling gently towards the camera. The background is slightly blurred but suggests a vibrant, modern office or community center setting. The lighting is soft and flattering, highlighting her approachable and dedicated demeanor."
+            src="https://lh3.googleusercontent.com/aida-public/AB6AXuClNIF3_AG1FcbNaBM0pRquhR_7WnC8i3DF_ZwE1Hs-IDT9fEYJMpqTPax0FOZkgz1a6ejGMtf7A4lJYpWQ6ZkAWdjYNDZ0VVhzsrKUMJ5G5qRXSwcMW8EUljK5xK3Qa6g5pIxMBt03sqeSWsg38ezNju-V_smU-xxCvJX1A79I_JACV8piNGvPkba2EXYPaK8--FULHOGby6_-rTtK8SaItRHUMkaqD_hqdbtPtSxL_HPEDdsyWVGK"
+          />
+          <div
+            class="p-6 border-l-4 border-secondary/0 group-hover:border-secondary transition-all"
+          >
+            <h3
+              class="font-display text-title-sm font-semibold text-on-surface mb-1"
+            >
+              Dr. Anjali Sharma
+            </h3>
+            <p class="font-sans text-body-md text-on-surface-variant mb-4">
+              Founder &amp; Director (संस्थापक)
+            </p>
+            <p
+              class="font-sans text-body-md text-on-surface-variant text-sm line-clamp-3"
+            >
+              With over 20 years in rural development, Dr. Sharma leads our
+              strategic vision, ensuring our educational programs remain
+              impactful and culturally relevant.
+            </p>
+          </div>
+        </div>
+        <!-- Team Member 2 -->
+        <div
+          class="group bg-surface rounded-xl overflow-hidden shadow-[0_4px_12px_rgba(0,0,128,0.05)] border border-outline-variant/20 hover:shadow-lg transition-all duration-300"
+        >
+          <img
+            alt="Vikram Singh"
+            class="w-full h-72 object-cover object-top"
+            data-alt="A professional, warm, high-resolution portrait of a young Indian man in a smart casual button-down shirt, standing outdoors with a confident, welcoming smile. The background features a subtle hint of rural landscape or a school building, out of focus. Bright, natural lighting conveys transparency and energy."
+            src="https://lh3.googleusercontent.com/aida-public/AB6AXuBjM-HtUz-ZqBc_EsV3rVbCKSrLY-5TWG3SfGlCzVgEQBK1r3Cun83rPtI1ssLuooSdq4wKTewd_9B_CDsevEx7XJXfNROO8cAYtYaICCbmk7klSEDEtxcs5tDtDybN_BqXErTahyJJdpHhBjaEANDD6MDfJz6BkdYfj1W-mo76v8vQzQvm_07k23cuZ264m6ORhbXcB1yj7jS2my03y_R_0uFb0f5q2X1tZ8XYwK3AqzDitjg_afXD"
+          />
+          <div
+            class="p-6 border-l-4 border-secondary/0 group-hover:border-secondary transition-all"
+          >
+            <h3
+              class="font-display text-title-sm font-semibold text-on-surface mb-1"
+            >
+              Vikram Singh
+            </h3>
+            <p class="font-sans text-body-md text-on-surface-variant mb-4">
+              Head of Operations (संचालन प्रमुख)
+            </p>
+            <p
+              class="font-sans text-body-md text-on-surface-variant text-sm line-clamp-3"
+            >
+              Vikram oversees the daily execution of our grassroots initiatives,
+              managing a dedicated network of volunteers across diverse
+              communities.
+            </p>
+          </div>
+        </div>
+        <!-- Team Member 3 -->
+        <div
+          class="group bg-surface rounded-xl overflow-hidden shadow-[0_4px_12px_rgba(0,0,128,0.05)] border border-outline-variant/20 hover:shadow-lg transition-all duration-300"
+        >
+          <img
+            alt="Ramesh Patel"
+            class="w-full h-72 object-cover object-top"
+            data-alt="A professional, warm, high-resolution portrait of a senior Indian man with a white beard, wearing traditional kurta, offering a wise and gentle expression. He is seated in a well-lit, modest library or study space. The mood is respectful, grounded, and deeply tied to cultural heritage."
+            src="https://lh3.googleusercontent.com/aida-public/AB6AXuD3GRQfHa6F1BBp3MXU9GERmRlFOQzV3uJEnEv9wfPfpQ9NQOsPY6m5XLYsCEqaZH9zfqbvgcwbTZKBOtukRIeyxi-01WeJBkavKKe-1Du42qn3UmYKJ-g_LYl-uTeQbUQh4JaN-kUELmDObdhFOujuxi5NcDpaoLHoXJPIEs9-k6xj34TWv7Nz7BCnIlKGSmKIW-KBp6Xbah6Pl97oNNhsqGGg8Dyjy8E7kN9xbMPvWjEtI8QFicli"
+          />
+          <div
+            class="p-6 border-l-4 border-secondary/0 group-hover:border-secondary transition-all"
+          >
+            <h3
+              class="font-display text-title-sm font-semibold text-on-surface mb-1"
+            >
+              Ramesh Patel
+            </h3>
+            <p class="font-sans text-body-md text-on-surface-variant mb-4">
+              Community Liaison (सामुदायिक संपर्क)
+            </p>
+            <p
+              class="font-sans text-body-md text-on-surface-variant text-sm line-clamp-3"
+            >
+              Ramesh bridges the gap between our modern educational approaches
+              and local traditions, fostering deep trust within the villages we
+              serve.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- Documentation Section (Glassmorphism inspired card) -->
+    <section class="py-section-gap px-gutter max-w-container-max mx-auto mb-16">
+      <div
+        class="bg-surface-container-high/50 backdrop-blur-md rounded-2xl p-8 md:p-12 border border-outline-variant/50 shadow-sm relative overflow-hidden"
+      >
+        <!-- Decorative Element -->
+        <div
+          class="absolute top-0 right-0 -mt-16 -mr-16 w-64 h-64 bg-primary/5 rounded-full blur-3xl z-0"
+        >
+        </div>
+        <div
+          class="relative z-10 flex flex-col md:flex-row justify-between items-start md:items-center gap-8"
+        >
+          <div class="max-w-xl">
+            <h2
+              class="font-display text-headline-md text-on-surface mb-3 flex items-center gap-3"
+            >
+              <span
+                class="material-symbols-outlined text-primary"
+                data-icon="description">description</span
+              >
+              Transparency &amp; Reports
+            </h2>
+            <p class="font-sans text-body-lg text-on-surface-variant">
+              पारदर्शिता और रिपोर्ट
+            </p>
+            <p class="font-sans text-body-md text-on-surface-variant mt-4">
+              We are committed to total transparency. Access our latest annual
+              reports and audited financials to see exactly how your
+              contributions impact communities.
+            </p>
+          </div>
+          <div class="flex flex-col w-full md:w-auto gap-4">
+            <a
+              class="flex items-center justify-between gap-6 bg-surface px-6 py-4 rounded-lg border border-outline-variant hover:border-primary transition-colors shadow-sm group"
+              href="#"
+            >
+              <div class="flex items-center gap-3">
+                <span
+                  class="material-symbols-outlined text-secondary"
+                  data-icon="picture_as_pdf">picture_as_pdf</span
+                >
+                <div>
+                  <div
+                    class="font-display text-title-sm font-semibold text-on-surface"
+                  >
+                    Annual Report 2023-24
+                  </div>
+                  <div
+                    class="font-sans text-body-md text-on-surface-variant text-xs"
+                  >
+                    PDF • 4.2 MB
+                  </div>
+                </div>
+              </div>
+              <span
+                class="material-symbols-outlined text-on-surface-variant group-hover:text-primary transition-colors"
+                data-icon="download">download</span
+              >
+            </a>
+            <a
+              class="flex items-center justify-between gap-6 bg-surface px-6 py-4 rounded-lg border border-outline-variant hover:border-primary transition-colors shadow-sm group"
+              href="#"
+            >
+              <div class="flex items-center gap-3">
+                <span
+                  class="material-symbols-outlined text-secondary"
+                  data-icon="account_balance">account_balance</span
+                >
+                <div>
+                  <div
+                    class="font-display text-title-sm font-semibold text-on-surface"
+                  >
+                    Audited Financials FY24
+                  </div>
+                  <div
+                    class="font-sans text-body-md text-on-surface-variant text-xs"
+                  >
+                    PDF • 1.8 MB
+                  </div>
+                </div>
+              </div>
+              <span
+                class="material-symbols-outlined text-on-surface-variant group-hover:text-primary transition-colors"
+                data-icon="download">download</span
+              >
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+</BaseLayout>

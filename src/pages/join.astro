@@ -1,0 +1,255 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+---
+
+<BaseLayout title="Join Vasudhaiva Kulam">
+  <main
+    class="w-full max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop py-12 md:py-20 flex flex-col gap-section-gap"
+  >
+    <!-- Hero Section -->
+    <header class="text-center max-w-3xl mx-auto space-y-6">
+      <h1
+        class="font-display text-display-lg md:font-display-lg md:text-display-lg text-primary"
+      >
+        Get Involved &amp; Contact Us <br /><span
+          class="text-secondary opacity-80 text-3xl md:text-4xl"
+          >हमसे जुड़ें</span
+        >
+      </h1>
+      <p class="font-sans text-body-lg text-on-surface-variant">
+        Join the global kinship. Whether you have an hour a week or represent an
+        institution looking to partner, there is a place for you here.
+      </p>
+    </header>
+    <!-- Bento Grid Layout for Forms and Contact -->
+    <div class="grid grid-cols-1 lg:grid-cols-12 gap-6 lg:gap-8">
+      <!-- Volunteer Form (Spans 8 columns on large screens) -->
+      <section class="lg:col-span-7 glass-card p-6 md:p-10 rounded-xl">
+        <div class="flex items-center gap-3 mb-8">
+          <span
+            class="material-symbols-outlined text-3xl text-secondary"
+            style="font-variation-settings: 'FILL' 1;">volunteer_activism</span
+          >
+          <h2
+            class="font-display text-headline-md md:font-display md:text-headline-md text-on-surface"
+          >
+            Volunteer With Us <br /><span
+              class="text-lg font-normal text-on-surface-variant"
+              >स्वयंसेवक बनें</span
+            >
+          </h2>
+        </div>
+        <form class="space-y-6">
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+            <div>
+              <input
+                class="input-minimal w-full font-sans text-body-md text-on-surface"
+                id="vol-name"
+                placeholder="Full Name (पूरा नाम)"
+                required=""
+                type="text"
+              />
+            </div>
+            <div>
+              <input
+                class="input-minimal w-full font-sans text-body-md text-on-surface"
+                id="vol-email"
+                placeholder="Email Address (ईमेल)"
+                required=""
+                type="email"
+              />
+            </div>
+          </div>
+          <div>
+            <p
+              class="font-sans text-label-caps font-semibold uppercase tracking-wider text-on-surface-variant mb-4 uppercase"
+            >
+              Areas of Interest (रुचि के क्षेत्र)
+            </p>
+            <div class="flex flex-wrap gap-3">
+              <div>
+                <input
+                  class="hidden tag-checkbox"
+                  id="tag-field"
+                  type="checkbox"
+                />
+                <label
+                  class="cursor-pointer border border-outline text-on-surface-variant px-4 py-2 rounded-full font-sans text-body-md transition-colors hover:bg-surface-container"
+                  for="tag-field">Fieldwork</label
+                >
+              </div>
+              <div>
+                <input
+                  class="hidden tag-checkbox"
+                  id="tag-teach"
+                  type="checkbox"
+                />
+                <label
+                  class="cursor-pointer border border-outline text-on-surface-variant px-4 py-2 rounded-full font-sans text-body-md transition-colors hover:bg-surface-container"
+                  for="tag-teach">Teaching</label
+                >
+              </div>
+              <div>
+                <input
+                  class="hidden tag-checkbox"
+                  id="tag-digital"
+                  type="checkbox"
+                />
+                <label
+                  class="cursor-pointer border border-outline text-on-surface-variant px-4 py-2 rounded-full font-sans text-body-md transition-colors hover:bg-surface-container"
+                  for="tag-digital">Digital Support</label
+                >
+              </div>
+              <div>
+                <input
+                  class="hidden tag-checkbox"
+                  id="tag-micro"
+                  type="checkbox"
+                />
+                <label
+                  class="cursor-pointer border border-outline text-on-surface-variant px-4 py-2 rounded-full font-sans text-body-md transition-colors hover:bg-surface-container"
+                  for="tag-micro">Micro-volunteering</label
+                >
+              </div>
+            </div>
+          </div>
+          <div>
+            <textarea
+              class="input-minimal w-full font-sans text-body-md text-on-surface resize-none"
+              id="vol-message"
+              placeholder="Briefly tell us why you want to join..."
+              rows="3"></textarea>
+          </div>
+          <button
+            class="bg-secondary text-on-secondary font-display text-title-sm font-semibold px-8 py-3 rounded-lg hover:shadow-lg transition-all w-full md:w-auto"
+            type="button">Submit Interest</button
+          >
+        </form>
+      </section>
+      <!-- Contact Details & CSR (Spans 5 columns) -->
+      <div class="lg:col-span-5 flex flex-col gap-6 lg:gap-8">
+        <!-- Contact Info Card -->
+        <section
+          class="glass-card p-6 md:p-8 rounded-xl h-full flex flex-col justify-between border-l-4 border-l-secondary"
+        >
+          <h3
+            class="font-display text-title-sm font-semibold text-primary mb-6"
+          >
+            Contact Details <span
+              class="text-sm font-normal text-on-surface-variant ml-2"
+              >(संपर्क)</span
+            >
+          </h3>
+          <div class="space-y-6 flex-grow">
+            <div class="flex items-start gap-4">
+              <span class="material-symbols-outlined text-secondary mt-1"
+                >location_on</span
+              >
+              <div>
+                <p class="font-sans text-body-md font-semibold text-on-surface">
+                  Headquarters
+                </p>
+                <p class="font-sans text-body-md text-on-surface-variant">
+                  123 Vasudhaiva Marg, Sector 4<br />New Delhi, India 110001
+                </p>
+              </div>
+            </div>
+            <div class="flex items-center gap-4">
+              <span class="material-symbols-outlined text-secondary">call</span>
+              <div>
+                <p class="font-sans text-body-md font-semibold text-on-surface">
+                  Helpline
+                </p>
+                <p class="font-sans text-body-md text-on-surface-variant">
+                  +91 1800-123-4567
+                </p>
+              </div>
+            </div>
+            <div class="flex items-center gap-4">
+              <span class="material-symbols-outlined text-secondary">mail</span>
+              <div>
+                <p class="font-sans text-body-md font-semibold text-on-surface">
+                  Email
+                </p>
+                <p class="font-sans text-body-md text-on-surface-variant">
+                  namaste@vasudhaivakulam.org
+                </p>
+              </div>
+            </div>
+          </div>
+        </section>
+        <!-- Map Area -->
+        <section
+          class="h-48 md:h-64 rounded-xl overflow-hidden relative shadow-sm border border-outline-variant"
+        >
+          <div
+            class="bg-cover bg-center w-full h-full absolute inset-0"
+            data-alt="A stylized, clean, minimalist map centered on New Delhi, India. The map uses a light mode aesthetic with white backgrounds, subtle light grey roads, and navy blue accents for major landmarks. A deep green location pin marks the center. High contrast, professional NGO branding style."
+            data-location="New Delhi, India"
+            style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuADwrxpU5J5GqTCxnFVimTtbadAiLL3rQdVI2sq-_DzNJfkWAO4wY63HuhDe96as6vei1WhOOFW_dwTSItJ2A5qHo0sHvvE5ShcZ8zkw6OSsYJ7CFgn9yXqvj2ox8_cVQIasU0J76Jd3jnE9UnLadKEIJ-w_1CIQFLUCGsrvCIkL0tkyoMe4mI7Hr5FS2frO_HsotwVIZs3Em72p5vMgV4fFlA8P4K836EAAvaLXksf41Q34nfUXssr')"
+          >
+          </div>
+        </section>
+      </div>
+    </div>
+    <!-- CSR / Partners Section -->
+    <section
+      class="glass-card p-6 md:p-10 rounded-xl max-w-4xl mx-auto w-full mt-8"
+    >
+      <div class="text-center mb-8">
+        <h2
+          class="font-display text-headline-md md:font-display md:text-headline-md text-primary"
+        >
+          Institutional Partnerships &amp; CSR
+        </h2>
+        <p class="font-sans text-body-md text-on-surface-variant mt-2">
+          Let's create sustainable impact together. Fill out the form below for
+          institutional inquiries.
+        </p>
+      </div>
+      <form class="grid grid-cols-1 md:grid-cols-2 gap-6">
+        <div>
+          <input
+            class="input-minimal w-full font-sans text-body-md text-on-surface"
+            placeholder="Organization Name"
+            required=""
+            type="text"
+          />
+        </div>
+        <div>
+          <input
+            class="input-minimal w-full font-sans text-body-md text-on-surface"
+            placeholder="Contact Person"
+            required=""
+            type="text"
+          />
+        </div>
+        <div>
+          <input
+            class="input-minimal w-full font-sans text-body-md text-on-surface"
+            placeholder="Corporate Email"
+            required=""
+            type="email"
+          />
+        </div>
+        <div>
+          <select
+            class="input-minimal w-full font-sans text-body-md text-on-surface-variant appearance-none cursor-pointer bg-transparent"
+          >
+            <option disabled="" selected="" value="">Partnership Type</option>
+            <option value="csr">CSR Funding</option>
+            <option value="inkind">In-kind Donation</option>
+            <option value="event">Joint Event</option>
+            <option value="other">Other</option>
+          </select>
+        </div>
+        <div class="md:col-span-2 mt-4 text-center">
+          <button
+            class="border-2 border-primary text-primary font-display text-title-sm font-semibold px-8 py-3 rounded-lg hover:bg-primary-container hover:border-primary-container hover:text-on-primary-container transition-all"
+            type="button">Request Partnership Pack</button
+          >
+        </div>
+      </form>
+    </section>
+  </main>
+</BaseLayout>

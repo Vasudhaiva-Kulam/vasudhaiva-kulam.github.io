@@ -1,0 +1,104 @@
+---
+export interface Props {
+  imageSrc: string;
+  imageAlt: string;
+  categoryIcon: string;
+  categoryName: string;
+  badgeTextClass?: string;
+  title: string;
+  subtitle: string;
+  description: string;
+  progressCurrent: string;
+  progressGoal: string;
+  progressPercentage: number;
+  buttonText: string;
+  cardClass?: string;
+  cardStyle?: string;
+}
+
+const {
+  imageSrc,
+  imageAlt,
+  categoryIcon,
+  categoryName,
+  badgeTextClass = "text-secondary",
+  title,
+  subtitle,
+  description,
+  progressCurrent,
+  progressGoal,
+  progressPercentage,
+  buttonText,
+  cardClass = "bg-surface-container-lowest",
+  cardStyle = "box-shadow: 0 4px 12px rgba(0, 0, 128, 0.05);",
+} = Astro.props;
+---
+
+<article
+  class:list={[
+    "rounded-xl overflow-hidden border border-[#F0F0F0] flex flex-col group transition-all duration-300 hover:-translate-y-1",
+    cardClass,
+  ]}
+  style={cardStyle}
+>
+  <div class="relative h-48 w-full overflow-hidden">
+    <div
+      class="bg-cover bg-center w-full h-full transform group-hover:scale-105 transition-transform duration-500"
+      role="img"
+      aria-label={imageAlt}
+      style={`background-image: url('${imageSrc}')`}
+    >
+    </div>
+    <span
+      class:list={[
+        "absolute top-4 left-4 bg-surface px-3 py-1 rounded-full font-sans text-[12px] shadow-sm flex items-center gap-1",
+        badgeTextClass,
+      ]}
+    >
+      <span class="material-symbols-outlined text-[16px]">{categoryIcon}</span>
+      {categoryName}
+    </span>
+  </div>
+
+  <div class="p-6 flex flex-col flex-grow gap-4">
+    <h3 class="font-display text-title-sm font-semibold text-on-tertiary-fixed">
+      {title}
+      <br />
+      <span class="text-on-surface-variant text-[16px] font-normal"
+        >{subtitle}</span
+      >
+    </h3>
+
+    <p class="font-sans text-body-md text-on-surface-variant line-clamp-3">
+      {description}
+    </p>
+
+    <div
+      class="mt-auto pt-4 border-t border-outline-variant flex flex-col gap-2"
+    >
+      <div
+        class="flex justify-between font-sans text-[12px] text-on-surface-variant"
+      >
+        <span>{progressCurrent}</span>
+        <span>{progressGoal}</span>
+      </div>
+
+      <div
+        class="w-full h-2 bg-surface-container-high rounded-full overflow-hidden"
+      >
+        <div
+          class="h-full bg-secondary rounded-full"
+          style={`width: ${progressPercentage}%;`}
+        >
+        </div>
+      </div>
+
+      <button
+        class="w-full mt-4 bg-surface border border-outline-variant text-primary font-sans text-label-caps font-semibold uppercase tracking-wider py-3 rounded-lg hover:bg-primary hover:text-on-primary transition-all flex justify-center items-center gap-2 group-hover:shadow-md"
+      >
+        {buttonText}
+        <span class="material-symbols-outlined text-[18px]">arrow_forward</span>
+      </button>
+    </div>
+  </div>
+</article>

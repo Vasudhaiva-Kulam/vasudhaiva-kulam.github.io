@@ -1,0 +1,224 @@
+---
+// Get the current path (e.g., "/", "/cause", "/about")
+const currentPath = Astro.url.pathname;
+
+// Define your links once to keep the template clean
+const navLinks = [
+  { href: "/", desktopLabel: "Home", mobileLabel: "Home", icon: "home" },
+  {
+    href: "/cause",
+    desktopLabel: "Causes",
+    mobileLabel: "Causes",
+    icon: "volunteer_activism",
+  },
+  {
+    href: "/about",
+    desktopLabel: "About Us",
+    mobileLabel: "Impact",
+    icon: "analytics",
+  },
+  {
+    href: "/join",
+    desktopLabel: "Contact",
+    mobileLabel: "Contact",
+    icon: "mail",
+  },
+];
+
+// Helper to handle trailing slashes for active state
+const isActive = (href: string) =>
+  currentPath === href || currentPath === href + "/";
+---
+
+<!-- Top Navigation (Desktop) -->
+<nav
+  class="hidden md:flex bg-surface dark:bg-surface-container-lowest text-primary dark:text-primary-fixed font-sans text-body-md top-0 sticky z-50 border-b border-outline-variant shadow-sm transition-all duration-300"
+  id="topNav"
+>
+  <div
+    class="flex justify-between items-center h-20 px-gutter w-full max-w-container-max mx-auto"
+  >
+    <!-- Brand -->
+    <div class="flex items-center gap-3">
+      <span
+        class="material-symbols-outlined text-3xl"
+        data-weight="fill"
+        style="font-variation-settings: 'FILL' 1;">volunteer_activism</span
+      >
+      <span
+        class="font-display text-title-sm font-semibold text-on-surface dark:text-inverse-on-surface"
+      >
+        Vasudhaiva Kulam
+      </span>
+    </div>
+
+    <!-- Links -->
+    <ul class="flex items-center gap-8">
+      {
+        navLinks.map((link) => (
+          <li>
+            <a
+              href={link.href}
+              class:list={[
+                "transition-all block duration-150 hover:scale-95",
+                isActive(link.href)
+                  ? "text-primary font-bold border-b-2 border-primary pb-1"
+                  : "text-on-surface-variant hover:text-primary hover:text-primary-container",
+              ]}
+            >
+              {link.desktopLabel}
+            </a>
+          </li>
+        ))
+      }
+    </ul>
+
+    <!-- Actions -->
+    <div class="flex items-center gap-4">
+      <button
+        class="px-3 py-1 rounded-full border border-outline-variant text-on-surface-variant hover:bg-surface-container-low transition-colors text-sm font-semibold"
+      >
+        EN | HI
+      </button>
+      <button
+        class="bg-primary-container text-on-primary-container px-6 py-2 rounded-full font-bold shadow hover:shadow-lg hover:-translate-y-0.5 transition-all"
+      >
+        Donate (दान करें)
+      </button>
+    </div>
+  </div>
+</nav>
+
+<!-- Navigation Drawer (Mobile) -->
+<div class="md:hidden">
+  <!-- Mobile Header to trigger drawer -->
+  <header
+    class="flex items-center justify-between p-4 bg-surface sticky top-0 z-40 border-b border-outline-variant shadow-sm"
+  >
+    <span class="font-display text-title-sm font-semibold text-primary"
+      >Vasudhaiva Kulam</span
+    >
+    <button class="p-2 text-on-surface" id="menuBtn">
+      <span class="material-symbols-outlined">menu</span>
+    </button>
+  </header>
+
+  <!-- Drawer Overlay -->
+  <div
+    class="fixed inset-0 bg-on-background/50 z-50 hidden transition-opacity opacity-0"
+    id="drawerOverlay"
+  >
+  </div>
+
+  <!-- Drawer Content -->
+  <nav
+    class="bg-surface dark:bg-surface-container-high text-primary font-sans text-body-lg h-full w-80 shadow-xl fixed inset-y-0 left-0 z-[60] flex flex-col p-6 transform -translate-x-full transition-transform duration-300"
+    id="navDrawer"
+  >
+    <!-- Header -->
+    <div
+      class="flex items-center justify-between mb-8 pb-4 border-b border-outline-variant"
+    >
+      <div>
+        <h2 class="font-display text-headline-md text-primary">
+          Vasudhaiva Kulam
+        </h2>
+        <p class="text-sm text-on-surface-variant">Global Kinship</p>
+      </div>
+      <button class="p-2 text-on-surface-variant" id="closeDrawer">
+        <span class="material-symbols-outlined">close</span>
+      </button>
+    </div>
+
+    <!-- Tabs -->
+    <ul class="flex flex-col gap-2 flex-grow">
+      {
+        navLinks.map((link) => (
+          <li>
+            <a
+              href={link.href}
+              class:list={[
+                "flex items-center gap-4 p-3 rounded-lg transition-all",
+                isActive(link.href)
+                  ? "bg-primary-container text-on-primary-container font-bold scale-98"
+                  : "text-on-surface-variant hover:bg-surface-container-low hover:bg-primary-fixed-dim",
+              ]}
+            >
+              <span class="material-symbols-outlined">{link.icon}</span>
+              {link.mobileLabel}
+            </a>
+          </li>
+        ))
+      }
+    </ul>
+
+    <!-- Footer / CTA -->
+    <div
+      class="mt-auto border-t border-outline-variant pt-4 flex flex-col gap-4"
+    >
+      <button
+        class="flex items-center justify-center gap-2 p-2 rounded-lg text-on-surface-variant hover:bg-surface-container-low transition-colors"
+      >
+        <span class="material-symbols-outlined text-sm">language</span>
+        <span>Hindi Toggle</span>
+      </button>
+      <button
+        class="bg-primary-container text-on-primary-container w-full py-3 rounded-full font-bold text-center shadow"
+      >
+        Donate Now
+      </button>
+    </div>
+  </nav>
+</div>
+
+<script>
+  // Drawer Logic
+  const menuBtn = document.getElementById("menuBtn");
+  const closeDrawer = document.getElementById("closeDrawer");
+  const navDrawer = document.getElementById("navDrawer");
+  const drawerOverlay = document.getElementById("drawerOverlay");
+
+  function toggleDrawer() {
+    const isClosed = navDrawer.classList.contains("-translate-x-full");
+    if (isClosed) {
+      if (menuBtn) menuBtn.ariaExpanded = true;
+      if (navDrawer) navDrawer.classList.remove("-translate-x-full");
+      if (drawerOverlay) drawerOverlay.classList.remove("hidden");
+      // slight delay to allow display block to apply before opacity transition
+      if (drawerOverlay)
+        setTimeout(() => drawerOverlay.classList.remove("opacity-0"), 10);
+    } else {
+      if (menuBtn) menuBtn.ariaExpanded = false;
+      if (navDrawer) navDrawer.classList.add("-translate-x-full");
+      if (drawerOverlay) drawerOverlay.classList.add("opacity-0");
+      if (drawerOverlay)
+        setTimeout(() => drawerOverlay.classList.add("hidden"), 300); // match transition duration
+    }
+  }
+
+  if (menuBtn) menuBtn.addEventListener("click", toggleDrawer);
+  if (closeDrawer) closeDrawer.addEventListener("click", toggleDrawer);
+  if (drawerOverlay) drawerOverlay.addEventListener("click", toggleDrawer);
+
+  // Sticky Nav Shadow Logic (Throttled with requestAnimationFrame)
+  const topNav = document.getElementById("topNav");
+  let ticking = false;
+
+  window.addEventListener("scroll", () => {
+    if (!ticking) {
+      window.requestAnimationFrame(() => {
+        if (topNav) {
+          if (window.scrollY > 10) {
+            topNav.classList.add("shadow-md");
+            topNav.classList.remove("shadow-sm");
+          } else {
+            topNav.classList.remove("shadow-md");
+            topNav.classList.add("shadow-sm");
+          }
+        }
+        ticking = false;
+      });
+      ticking = true;
+    }
+  });
+</script>
