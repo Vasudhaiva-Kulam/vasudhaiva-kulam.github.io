@@ -1,8 +1,7 @@
 ---
-// Get the current path (e.g., "/", "/cause", "/about")
-const currentPath = Astro.url.pathname;
+const base = import.meta.env.BASE_URL.replace(/\/$/, ""); // normalize: no trailing slash, ever
+const currentPath = Astro.url.pathname; // already includes base — don't add it again for comparison
 
-// Define your links once to keep the template clean
 const navLinks = [
   { href: "/", desktopLabel: "Home", mobileLabel: "Home", icon: "home" },
   {
@@ -25,9 +24,10 @@ const navLinks = [
   },
 ];
 
-// Helper to handle trailing slashes for active state
-const isActive = (href: string) =>
-  currentPath === href || currentPath === href + "/";
+const isActive = (href: string) => {
+  const full = base + href; // "/website" + "/cause" = "/website/cause"
+  return currentPath === full || currentPath === full + "/";
+};
 ---
 
 <!-- Top Navigation (Desktop) -->
@@ -58,7 +58,7 @@ const isActive = (href: string) =>
         navLinks.map((link) => (
           <li>
             <a
-              href={link.href}
+              href={base + link.href}
               class:list={[
                 "transition-all block duration-150 hover:scale-95",
                 isActive(link.href)
@@ -136,7 +136,7 @@ const isActive = (href: string) =>
         navLinks.map((link) => (
           <li>
             <a
-              href={link.href}
+              href={base + link.href}
               class:list={[
                 "flex items-center gap-4 p-3 rounded-lg transition-all",
                 isActive(link.href)
