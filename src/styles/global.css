@@ -76,7 +76,7 @@
   --text-body-lg: 1.125rem;
   --text-body-lg--line-height: 1.6;
 
-  --text-display-lg: clamp(2rem, 5vw, 3rem);
+  --text-display-lg: clamp(2rem, 6.25vw, 3rem);
   --text-display-lg--line-height: 1.2;
   --text-display-lg--font-weight: 700;
 
