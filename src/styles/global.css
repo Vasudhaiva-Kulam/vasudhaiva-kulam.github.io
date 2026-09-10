@@ -115,7 +115,7 @@
 
 @utility input-minimal {
   border: none;
-  border-bottom: 1px solid var(--color-tertiary); /* Use a themed color instead of #000080 */
+  border-bottom: 1px solid var(--color-tertiary);
   border-radius: 0;
   background-color: transparent;
   padding-top: 0.75rem;
