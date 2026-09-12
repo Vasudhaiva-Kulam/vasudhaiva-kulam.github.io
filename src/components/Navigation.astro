@@ -131,7 +131,7 @@ const isActive = (href: string) => {
     </div>
 
     <!-- Tabs -->
-    <ul class="flex flex-col gap-2 grow">
+    <ul class="flex flex-col gap-2 flex-grow">
       {
         navLinks.map((link) => (
           <li>
@@ -179,20 +179,30 @@ const isActive = (href: string) => {
   const drawerOverlay = document.getElementById("drawerOverlay");
 
   function toggleDrawer() {
+    // Early exit if the primary element doesn't exist
+    if (!navDrawer) return;
+
     const isClosed = navDrawer.classList.contains("-translate-x-full");
+
     if (isClosed) {
-      if (menuBtn) menuBtn.ariaExpanded = true;
-      if (navDrawer) navDrawer.classList.remove("-translate-x-full");
-      if (drawerOverlay) drawerOverlay.classList.remove("hidden");
-      // slight delay to allow display block to apply before opacity transition
-      if (drawerOverlay)
+      // Open drawer
+      if (menuBtn) menuBtn.setAttribute("aria-expanded", "true");
+      navDrawer.classList.remove("-translate-x-full");
+
+      if (drawerOverlay) {
+        drawerOverlay.classList.remove("hidden");
+        // Slight delay to allow display: block to apply before opacity transition
         setTimeout(() => drawerOverlay.classList.remove("opacity-0"), 10);
+      }
     } else {
-      if (menuBtn) menuBtn.ariaExpanded = false;
-      if (navDrawer) navDrawer.classList.add("-translate-x-full");
-      if (drawerOverlay) drawerOverlay.classList.add("opacity-0");
-      if (drawerOverlay)
+      // Close drawer
+      if (menuBtn) menuBtn.setAttribute("aria-expanded", "false");
+      navDrawer.classList.add("-translate-x-full");
+
+      if (drawerOverlay) {
+        drawerOverlay.classList.add("opacity-0");
         setTimeout(() => drawerOverlay.classList.add("hidden"), 300); // match transition duration
+      }
     }
   }
 
