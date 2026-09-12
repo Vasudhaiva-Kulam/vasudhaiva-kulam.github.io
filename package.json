@@ -14,16 +14,16 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/Vasudhaiva-Kulam/website.git"
+    "url": "git+https://github.com/Vasudhaiva-Kulam/vasudhaiva-kulam.github.io.git"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "type": "module",
   "bugs": {
-    "url": "https://github.com/Vasudhaiva-Kulam/website/issues"
+    "url": "https://github.com/Vasudhaiva-Kulam/vasudhaiva-kulam.github.io/issues"
   },
-  "homepage": "https://github.com/Vasudhaiva-Kulam/website#readme",
+  "homepage": "https://github.com/Vasudhaiva-Kulam/vasudhaiva-kulam.github.io#readme",
   "dependencies": {
     "@tailwindcss/cli": "^4.3.3",
     "@tailwindcss/container-queries": "^0.1.1",
