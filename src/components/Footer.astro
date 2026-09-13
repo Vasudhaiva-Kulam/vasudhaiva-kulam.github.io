@@ -1,3 +1,8 @@
+---
+import FooterLink from "./FooterLink.astro";
+import logo from "../assets/logo.png";
+---
+
 <footer
   class="bg-surface-container-highest dark:bg-surface-container-low text-on-surface-variant dark:text-on-surface font-sans text-body-md full-width border-t border-outline-variant mt-section-gap"
 >
@@ -8,11 +13,7 @@
       <div
         class="font-display text-title-sm font-semibold text-primary flex items-center gap-2"
       >
-        <span
-          class="material-symbols-outlined"
-          data-weight="fill"
-          style="font-variation-settings: 'FILL' 1;">volunteer_activism</span
-        >
+        <img src={logo.src} alt="Vasudhaiva Kulam" class="h-10" />
         Vasudhaiva Kulam
       </div>
       <p class="text-sm opacity-80">
@@ -22,22 +23,25 @@
     </div>
     <div class="flex flex-col gap-3">
       <h4 class="font-semibold text-on-surface">Quick Links</h4>
-      <a
-        class="hover:text-primary transition-colors opacity-80 hover:opacity-100"
-        href="#">WhatsApp Community</a
+      <FooterLink href="https://chat.whatsapp.com/Gw59zkm4bAg6KOFSVFMaLe"
+        >WhatsApp Community</FooterLink
       >
-      <a
-        class="hover:text-primary transition-colors opacity-80 hover:opacity-100"
-        href="/privacy">Privacy Policy</a
+      <FooterLink href="https://www.youtube.com/@Vasudhaivakulam"
+        >YouTube Channel</FooterLink
       >
-      <a
-        class="hover:text-primary transition-colors opacity-80 hover:opacity-100"
-        href="#">Terms of Service</a
+      <FooterLink href="https://www.instagram.com/vasudhaiva_kulam/"
+        >Instagram</FooterLink
       >
-      <a
-        class="hover:text-primary transition-colors opacity-80 hover:opacity-100"
-        href="#">Tax Benefits</a
+      <FooterLink
+        href="https://www.facebook.com/people/Vasudhaiva-kulam/61567640302886/"
+        >Facebook</FooterLink
       >
+      <FooterLink href="https://www.linkedin.com/company/145019977"
+        >LinkedIn Page</FooterLink
+      >
+      <FooterLink href="/privacy">Privacy Policy</FooterLink>
+      <FooterLink href="#">Terms of Service</FooterLink>
+      <FooterLink href="#">Tax Benefits</FooterLink>
     </div>
     <div class="flex flex-col gap-4 max-w-sm">
       <h4 class="font-semibold text-on-surface">Registered Details</h4>
