@@ -1,5 +1,6 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
+import Pillar from "../components/Pillar.astro";
 ---
 
 <BaseLayout title="Home - Vasudhaiva Kulam">
@@ -172,129 +173,39 @@ import BaseLayout from "../layouts/BaseLayout.astro";
           marginalized communities.
         </p>
       </div>
-      <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-        <!-- Pillar 1 -->
-        <div
-          class="bg-surface rounded-xl overflow-hidden shadow-[0_4px_12px_rgba(0,0,128,0.05)] border border-outline-variant/20 hover:shadow-[0_8px_24px_rgba(0,0,128,0.1)] transition-all duration-300 group cursor-pointer flex flex-col"
-        >
-          <div class="h-48 overflow-hidden relative">
-            <img
-              class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
-              alt="A brightly lit classroom in rural India where enthusiastic young children are learning, sitting at desks. The teacher, a young woman, is smiling and pointing at a blackboard. The mood is uplifting and educational. The lighting is natural, and the aesthetic features subtle saffron and navy blue accents in the environment, maintaining a modern, clean, ethno-centric corporate style."
-              src="src/assets/class.jpeg"
-            />
-            <div
-              class="absolute top-4 left-4 bg-surface/90 backdrop-blur px-3 py-1 rounded-full flex items-center gap-2"
-            >
-              <span class="material-symbols-outlined text-sm text-tertiary"
-                >auto_stories</span
-              >
-              <span class="text-xs font-semibold text-tertiary">Education</span>
-            </div>
-          </div>
-          <div class="p-6 grow flex flex-col">
-            <h3
-              class="font-display text-title-sm font-semibold text-on-surface mb-2"
-            >
-              Education (शिक्षा)
-            </h3>
-            <p class="font-sans text-body-md text-on-surface-variant mb-6 grow">
-              Providing quality education, resources, and mentorship to
-              underprivileged youth to break the cycle of poverty.
-            </p>
-            <a
-              class="inline-flex items-center gap-2 text-primary font-semibold hover:text-primary-container transition-colors mt-auto"
-              href="#"
-            >
-              Learn More <span class="material-symbols-outlined text-sm"
-                >arrow_forward</span
-              >
-            </a>
-          </div>
-        </div>
-        <!-- Pillar 2 -->
-        <div
-          class="bg-surface rounded-xl overflow-hidden shadow-[0_4px_12px_rgba(0,0,128,0.05)] border border-outline-variant/20 hover:shadow-[0_8px_24px_rgba(0,0,128,0.1)] transition-all duration-300 group cursor-pointer flex flex-col"
-        >
-          <div class="h-48 overflow-hidden relative">
-            <img
-              class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
-              alt="A community health camp in a village setting. A female doctor is examining a patient with care, surrounded by a supportive community. The scene is lit with warm, bright natural light, exuding trust and wellness. Deep greens and earthy tones dominate, aligning with a professional, human-first NGO visual identity."
-              src="src/assets/blood-donation.jpeg"
-            />
-            <div
-              class="absolute top-4 left-4 bg-surface/90 backdrop-blur px-3 py-1 rounded-full flex items-center gap-2"
-            >
-              <span
-                class="material-symbols-outlined text-sm text-primary-container"
-                >medical_services</span
-              >
-              <span class="text-xs font-semibold text-primary-container"
-                >Health</span
-              >
-            </div>
-          </div>
-          <div class="p-6 grow flex flex-col">
-            <h3
-              class="font-display text-title-sm font-semibold text-on-surface mb-2"
-            >
-              Health (स्वास्थ्य)
-            </h3>
-            <p class="font-sans text-body-md text-on-surface-variant mb-6 grow">
-              Ensuring access to basic healthcare by conducting periodic blood
-              donation drives.
-            </p>
-            <a
-              class="inline-flex items-center gap-2 text-primary font-semibold hover:text-primary-container transition-colors mt-auto"
-              href="#"
-            >
-              Learn More <span class="material-symbols-outlined text-sm"
-                >arrow_forward</span
-              >
-            </a>
-          </div>
-        </div>
-        <!-- Pillar 3 -->
-        <div
-          class="bg-surface rounded-xl overflow-hidden shadow-[0_4px_12px_rgba(0,0,128,0.05)] border border-outline-variant/20 hover:shadow-[0_8px_24px_rgba(0,0,128,0.1)] transition-all duration-300 group cursor-pointer flex flex-col"
-        >
-          <div class="h-48 overflow-hidden relative">
-            <img
-              class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
-              alt="A wide shot of a tree plantation drive in a semi-arid region. Volunteers of various ages are planting saplings. The sky is clear blue, and the earth is rich brown. Deep green foliage emphasizes environmental stewardship. The scene is optimistic, and bathed in bright daylight, fitting a modern ethno-centric corporate style."
-              src="https://lh3.googleusercontent.com/aida-public/AB6AXuBO8KfS9hNwcKZSosQux2X6T7zKOE-4536ocnwBqLS9aIUktb2tKsZG0-FckH44-5r3jSa_CmYGlH9HZGcEiM3IOjpyewBgJgzcg5M7FhbKp5v5bN-EG4l0fkMh7X8wbbSoI9D3Vf1x5lSzFaJRaX1hJlVbIWcIB42oFqJLvZ1iEouIwJn2VvFv5xYLTfUXZIlmoYmU0lF_jAWWfVerEVPNwfpwzuNa4ZLObFzao22tXIxNxfOSjsCp"
-            />
-            <div
-              class="absolute top-4 left-4 bg-surface/90 backdrop-blur px-3 py-1 rounded-full flex items-center gap-2"
-            >
-              <span class="material-symbols-outlined text-sm text-secondary"
-                >eco</span
-              >
-              <span class="text-xs font-semibold text-secondary"
-                >Environment</span
-              >
-            </div>
-          </div>
-          <div class="p-6 grow flex flex-col">
-            <h3
-              class="font-display text-title-sm font-semibold text-on-surface mb-2"
-            >
-              Environment (पर्यावरण)
-            </h3>
-            <p class="font-sans text-body-md text-on-surface-variant mb-6 grow">
-              Promoting sustainable living, massive afforestation drives, and
-              water conservation techniques.
-            </p>
-            <a
-              class="inline-flex items-center gap-2 text-primary font-semibold hover:text-primary-container transition-colors mt-auto"
-              href="#"
-            >
-              Learn More <span class="material-symbols-outlined text-sm"
-                >arrow_forward</span
-              >
-            </a>
-          </div>
-        </div>
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+        <Pillar
+          title="Education"
+          hindiTitle="शिक्षा"
+          description="Providing quality education, resources, and mentorship to underprivileged youth to break the cycle of poverty."
+          imageSrc="src/assets/class.jpeg"
+          imageAlt="A volunteer teaching underprivileged kids"
+          category="Education"
+          icon="auto_stories"
+          iconColor="text-tertiary"
+        />
+
+        <Pillar
+          title="Health"
+          hindiTitle="स्वास्थ्य"
+          description="Ensuring access to basic healthcare by conducting periodic blood donation drives."
+          imageSrc="src/assets/blood-donation.jpeg"
+          imageAlt="A volunteer donating blood"
+          category="Health"
+          icon="medical_services"
+          iconColor="text-primary-container"
+        />
+
+        <Pillar
+          title="Environment"
+          hindiTitle="पर्यावरण"
+          description="Promoting sustainable living, massive afforestation drives, and water conservation techniques."
+          imageSrc="https://lh3.googleusercontent.com/aida-public/..."
+          imageAlt="A wide shot of a tree plantation drive..."
+          category="Environment"
+          icon="eco"
+          iconColor="text-secondary"
+        />
       </div>
     </section>
   </main>

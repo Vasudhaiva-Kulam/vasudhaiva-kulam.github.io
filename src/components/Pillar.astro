@@ -1,0 +1,66 @@
+---
+interface Props {
+  title: string;
+  hindiTitle: string;
+  description: string;
+  imageSrc: string;
+  imageAlt: string;
+  category: string;
+  icon: string;
+  iconColor?: string;
+  href?: string;
+}
+
+const {
+  title,
+  hindiTitle,
+  description,
+  imageSrc,
+  imageAlt,
+  category,
+  icon,
+  iconColor,
+  href,
+} = Astro.props;
+---
+
+<div
+  class="bg-surface rounded-xl overflow-hidden shadow-[0_4px_12px_rgba(0,0,128,0.05)] border border-outline-variant/20 hover:shadow-[0_8px_24px_rgba(0,0,128,0.1)] transition-all duration-300 group cursor-pointer flex flex-col"
+>
+  <div class="h-48 overflow-hidden relative">
+    <img
+      class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+      alt={imageAlt}
+      src={imageSrc}
+    />
+
+    <div
+      class="absolute top-4 left-4 bg-surface/90 backdrop-blur px-3 py-1 rounded-full flex items-center gap-2"
+    >
+      <span class={`material-symbols-outlined text-sm ${iconColor}`}
+        >{icon}</span
+      >
+
+      <span class={`text-xs font-semibold ${iconColor}`}>{category}</span>
+    </div>
+  </div>
+
+  <div class="p-6 grow flex flex-col">
+    <h3 class="font-display text-title-sm font-semibold text-on-surface mb-2">
+      {title} ({hindiTitle})
+    </h3>
+
+    <p class="font-sans text-body-md text-on-surface-variant mb-6 grow">
+      {description}
+    </p>
+
+    <a
+      class="inline-flex items-center gap-2 text-primary font-semibold hover:text-primary-container transition-colors mt-auto"
+      href={href}
+    >
+      Learn More <span class="material-symbols-outlined text-sm"
+        >arrow_forward</span
+      >
+    </a>
+  </div>
+</div>
