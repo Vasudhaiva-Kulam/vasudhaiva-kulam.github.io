@@ -1,3 +1,7 @@
+---
+import FooterLink from "./FooterLink.astro";
+---
+
 <footer
   class="bg-surface-container-highest dark:bg-surface-container-low text-on-surface-variant dark:text-on-surface font-sans text-body-md full-width border-t border-outline-variant mt-section-gap"
 >
@@ -18,40 +22,25 @@
     </div>
     <div class="flex flex-col gap-3">
       <h4 class="font-semibold text-on-surface">Quick Links</h4>
-      <a
-        class="hover:text-primary transition-colors opacity-80 hover:opacity-100"
-        href="https://chat.whatsapp.com/Gw59zkm4bAg6KOFSVFMaLe"
-        >WhatsApp Community</a
+      <FooterLink href="https://chat.whatsapp.com/Gw59zkm4bAg6KOFSVFMaLe"
+        >WhatsApp Community</FooterLink
       >
-      <a
-        class="hover:text-primary transition-colors opacity-80 hover:opacity-100"
-        href="https://www.youtube.com/@Vasudhaivakulam">YouTube Channel</a
+      <FooterLink href="https://www.youtube.com/@Vasudhaivakulam"
+        >YouTube Channel</FooterLink
       >
-      <a
-        class="hover:text-primary transition-colors opacity-80 hover:opacity-100"
-        href="https://www.instagram.com/vasudhaiva_kulam/">Instagram</a
+      <FooterLink href="https://www.instagram.com/vasudhaiva_kulam/"
+        >Instagram</FooterLink
       >
-      <a
-        class="hover:text-primary transition-colors opacity-80 hover:opacity-100"
+      <FooterLink
         href="https://www.facebook.com/people/Vasudhaiva-kulam/61567640302886/"
-        >Facebook</a
+        >Facebook</FooterLink
       >
-      <a
-        class="hover:text-primary transition-colors opacity-80 hover:opacity-100"
-        href="https://www.linkedin.com/company/145019977">LinkedIn Page</a
+      <FooterLink href="https://www.linkedin.com/company/145019977"
+        >LinkedIn Page</FooterLink
       >
-      <a
-        class="hover:text-primary transition-colors opacity-80 hover:opacity-100"
-        href="/privacy">Privacy Policy</a
-      >
-      <a
-        class="hover:text-primary transition-colors opacity-80 hover:opacity-100"
-        href="#">Terms of Service</a
-      >
-      <a
-        class="hover:text-primary transition-colors opacity-80 hover:opacity-100"
-        href="#">Tax Benefits</a
-      >
+      <FooterLink href="/privacy">Privacy Policy</FooterLink>
+      <FooterLink href="#">Terms of Service</FooterLink>
+      <FooterLink href="#">Tax Benefits</FooterLink>
     </div>
     <div class="flex flex-col gap-4 max-w-sm">
       <h4 class="font-semibold text-on-surface">Registered Details</h4>
