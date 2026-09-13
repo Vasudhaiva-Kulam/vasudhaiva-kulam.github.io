@@ -4,6 +4,7 @@ import Pillar from "../components/Pillar.astro";
 import classImage from "../assets/class.jpeg";
 import bloodDonationImage from "../assets/blood-donation.jpeg";
 import blanketImage from "../assets/blanket.jpeg";
+import teamImage from "../assets/us.jpeg";
 ---
 
 <BaseLayout title="Home - Vasudhaiva Kulam">
@@ -16,7 +17,7 @@ import blanketImage from "../assets/blanket.jpeg";
       <div
         class="absolute inset-0 z-0 bg-cover bg-center"
         data-alt="Our team"
-        style="background-image: url('src/assets/us.jpeg')"
+        style={`background-image: url(${teamImage.src})`}
       >
         <!-- Gradient Overlay for readability -->
         <div
