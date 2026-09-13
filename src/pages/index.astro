@@ -1,6 +1,9 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
 import Pillar from "../components/Pillar.astro";
+import classImage from "../assets/class.jpeg";
+import bloodDonationImage from "../assets/blood-donation.jpeg";
+import blanketImage from "../assets/blanket.jpeg";
 ---
 
 <BaseLayout title="Home - Vasudhaiva Kulam">
@@ -180,7 +183,7 @@ import Pillar from "../components/Pillar.astro";
           title="Education"
           hindiTitle="शिक्षा"
           description="Providing quality education, resources, and mentorship to underprivileged youth to break the cycle of poverty."
-          imageSrc="src/assets/class.jpeg"
+          imageSrc={classImage.src}
           imageAlt="A volunteer teaching underprivileged kids"
           category="Education"
           icon="auto_stories"
@@ -191,7 +194,7 @@ import Pillar from "../components/Pillar.astro";
           title="Health"
           hindiTitle="स्वास्थ्य"
           description="Ensuring access to basic healthcare by conducting periodic blood donation drives."
-          imageSrc="src/assets/blood-donation.jpeg"
+          imageSrc={bloodDonationImage.src}
           imageAlt="A volunteer donating blood"
           category="Health"
           icon="medical_services"
@@ -202,7 +205,7 @@ import Pillar from "../components/Pillar.astro";
           title="Community Welfare"
           hindiTitle="जन कल्याण"
           description="Providing access to basic facilities by distributing blankets, food, lights, etc."
-          imageSrc="src/assets/blanket.jpeg"
+          imageSrc={blanketImage.src}
           imageAlt="Volunteer giving a blanket to an old man"
           category="Community Welfare"
           icon="groups"

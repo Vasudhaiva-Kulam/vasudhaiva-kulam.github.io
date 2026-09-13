@@ -1,5 +1,6 @@
 ---
 import FooterLink from "./FooterLink.astro";
+import logo from "../assets/logo.png";
 ---
 
 <footer
@@ -12,7 +13,7 @@ import FooterLink from "./FooterLink.astro";
       <div
         class="font-display text-title-sm font-semibold text-primary flex items-center gap-2"
       >
-        <img src="src/assets/logo.png" class="h-10" />
+        <img src={logo.src} alt="Vasudhaiva Kulam" class="h-10" />
         Vasudhaiva Kulam
       </div>
       <p class="text-sm opacity-80">
