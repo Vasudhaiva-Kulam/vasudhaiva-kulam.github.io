@@ -25,7 +25,7 @@ const navLinks = [
 ];
 
 const isActive = (href: string) => {
-  const full = base + href; // "/website" + "/cause" = "/website/cause"
+  const full = base + href;
   return currentPath === full || currentPath === full + "/";
 };
 ---
@@ -40,11 +40,7 @@ const isActive = (href: string) => {
   >
     <!-- Brand -->
     <div class="flex items-center gap-3">
-      <span
-        class="material-symbols-outlined text-3xl"
-        data-weight="fill"
-        style="font-variation-settings: 'FILL' 1;">volunteer_activism</span
-      >
+      <img src="src/assets/logo.png" class="h-10" />
       <span
         class="font-display text-title-sm font-semibold text-on-surface dark:text-inverse-on-surface"
       >
