@@ -1,5 +1,6 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
+import { stats } from "../data/stats";
 ---
 
 <BaseLayout title="Home - Vasudhaiva Kulam">
@@ -78,84 +79,57 @@ import BaseLayout from "../layouts/BaseLayout.astro";
       <div
         class="bg-surface rounded-xl shadow-[0_4px_24px_rgba(0,0,128,0.08)] p-6 md:p-8 flex flex-col md:flex-row justify-between items-center gap-8 border border-outline-variant/30 backdrop-blur-xl"
       >
-        <div
-          class="flex items-center gap-4 text-center md:text-left flex-1 justify-center md:justify-start"
-        >
-          <div
-            class="p-3 bg-secondary-container/20 rounded-full text-secondary"
-          >
-            <span
-              class="material-symbols-outlined text-3xl"
-              data-weight="fill"
-              style="font-variation-settings: 'FILL' 1;">school</span
-            >
-          </div>
-          <div>
-            <div
-              class="font-display text-headline-md text-secondary counter"
-              data-target="5000"
-            >
-              0
-            </div>
-            <div
-              class="font-sans text-body-md text-on-surface-variant font-semibold"
-            >
-              Students Mentored
-            </div>
-          </div>
-        </div>
-        <div class="hidden md:block w-px h-16 bg-outline-variant/50"></div>
-        <div
-          class="flex items-center gap-4 text-center md:text-left flex-1 justify-center md:justify-center"
-        >
-          <div
-            class="p-3 bg-secondary-container/20 rounded-full text-secondary"
-          >
-            <span
-              class="material-symbols-outlined text-3xl"
-              data-weight="fill"
-              style="font-variation-settings: 'FILL' 1;">park</span
-            >
-          </div>
-          <div>
-            <div
-              class="font-display text-headline-md text-secondary counter"
-              data-target="12000"
-            >
-              0
-            </div>
-            <div
-              class="font-sans text-body-md text-on-surface-variant font-semibold"
-            >
-              Trees Planted
-            </div>
-          </div>
-        </div>
-        <div class="hidden md:block w-px h-16 bg-outline-variant/50"></div>
-        <div
-          class="flex items-center gap-4 text-center md:text-left flex-1 justify-center md:justify-end"
-        >
-          <div class="p-3 bg-tertiary-container/20 rounded-full text-tertiary">
-            <span
-              class="material-symbols-outlined text-3xl"
-              data-weight="fill"
-              style="font-variation-settings: 'FILL' 1;">groups</span
-            >
-          </div>
-          <div>
-            <div
-              class="font-display text-headline-md text-tertiary counter"
-              data-target="50"
-            >
-              0
-            </div>
-            <div
-              class="font-sans text-body-md text-on-surface-variant font-semibold"
-            >
-              Villages Reached
-            </div>
-          </div>
-        </div>
+        {
+          stats.map((stat, index) => (
+            <>
+              {index > 0 && (
+                <div class="hidden md:block w-px h-16 bg-outline-variant/50" />
+              )}
+
+              <div
+                class:list={[
+                  "flex items-center gap-4 text-center md:text-left flex-1 justify-center",
+                  index === stats.length - 1 && "md:justify-end",
+                ]}
+              >
+                <div
+                  class:list={[
+                    "p-3 rounded-full",
+                    stat.color === "secondary" &&
+                      "bg-secondary-container/20 text-secondary",
+                    stat.color === "tertiary" &&
+                      "bg-tertiary-container/20 text-tertiary",
+                  ]}
+                >
+                  <span
+                    class="material-symbols-outlined text-3xl"
+                    data-weight="fill"
+                    style="font-variation-settings: 'FILL' 1;"
+                  >
+                    {stat.icon}
+                  </span>
+                </div>
+
+                <div>
+                  <div
+                    class:list={[
+                      "font-display text-headline-md counter",
+                      stat.color === "secondary" && "text-secondary",
+                      stat.color === "tertiary" && "text-tertiary",
+                    ]}
+                    data-target={stat.value}
+                  >
+                    0
+                  </div>
+
+                  <div class="font-sans text-body-md text-on-surface-variant font-semibold">
+                    {stat.label}
+                  </div>
+                </div>
+              </div>
+            </>
+          ))
+        }
       </div>
     </section>
     <!-- Pillars Grid (3-column) -->
@@ -306,7 +280,7 @@ import BaseLayout from "../layouts/BaseLayout.astro";
   <script>
     // Counter Animation
     const counters = document.querySelectorAll(".counter");
-    const speed = 200; // The HIGHER the number, the slower the animation
+    const speed = 20000; // The HIGHER the number, the slower the animation
 
     // 1. Define the update function outside the loop
     const updateCount = (counter) => {
