@@ -46,16 +46,18 @@ const isActive = (href: string) => {
   >
     <!-- Brand -->
     <div class="flex items-center gap-3">
-      <span
-        class="material-symbols-outlined text-3xl"
-        data-weight="fill"
-        style="font-variation-settings: 'FILL' 1;">volunteer_activism</span
-      >
-      <span
-        class="font-display text-title-sm font-semibold text-on-surface dark:text-inverse-on-surface"
-      >
-        Vasudhaiva Kulam
-      </span>
+      <a href="/">
+        <span
+          class="material-symbols-outlined text-3xl"
+          data-weight="fill"
+          style="font-variation-settings: 'FILL' 1;">volunteer_activism</span
+        >
+        <span
+          class="font-display text-title-sm font-semibold text-on-surface dark:text-inverse-on-surface"
+        >
+          Vasudhaiva Kulam
+        </span>
+      </a>
     </div>
 
     <!-- Links -->
@@ -103,8 +105,10 @@ const isActive = (href: string) => {
   <header
     class="flex items-center justify-between p-4 bg-surface sticky top-0 z-40 border-b border-outline-variant shadow-sm"
   >
-    <span class="font-display text-title-sm font-semibold text-primary"
-      >Vasudhaiva Kulam</span
+    <a href="/">
+      <span class="font-display text-title-sm font-semibold text-primary"
+        >Vasudhaiva Kulam</span
+      ></a
     >
     <button class="p-2 text-on-surface" id="menuBtn">
       <span class="material-symbols-outlined">menu</span>
