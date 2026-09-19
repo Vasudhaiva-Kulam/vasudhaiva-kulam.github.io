@@ -37,7 +37,11 @@ import BaseLayout from "../layouts/BaseLayout.astro";
             >
           </h2>
         </div>
-        <form class="space-y-6">
+        <form
+          class="space-y-6"
+          action="https://formspree.io/f/mzezdbvy"
+          method="POST"
+        >
           <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
             <div>
               <label for="vol-name">Full Name (पूरा नाम)</label>
@@ -47,6 +51,7 @@ import BaseLayout from "../layouts/BaseLayout.astro";
                 placeholder="Full Name (पूरा नाम)"
                 required=""
                 type="text"
+                name="name"
               />
             </div>
             <div>
@@ -57,6 +62,7 @@ import BaseLayout from "../layouts/BaseLayout.astro";
                 placeholder="Email Address (ईमेल)"
                 required=""
                 type="email"
+                name="email"
               />
             </div>
           </div>
@@ -72,6 +78,8 @@ import BaseLayout from "../layouts/BaseLayout.astro";
                   class="hidden tag-checkbox"
                   id="tag-field"
                   type="checkbox"
+                  name="Interests"
+                  value="Fieldwork"
                 />
                 <label
                   class="cursor-pointer border border-outline text-on-surface-variant px-4 py-2 rounded-full font-sans text-body-md transition-colors hover:bg-surface-container"
@@ -83,6 +91,8 @@ import BaseLayout from "../layouts/BaseLayout.astro";
                   class="hidden tag-checkbox"
                   id="tag-teach"
                   type="checkbox"
+                  name="Interests"
+                  value="Teaching"
                 />
                 <label
                   class="cursor-pointer border border-outline text-on-surface-variant px-4 py-2 rounded-full font-sans text-body-md transition-colors hover:bg-surface-container"
@@ -94,6 +104,8 @@ import BaseLayout from "../layouts/BaseLayout.astro";
                   class="hidden tag-checkbox"
                   id="tag-digital"
                   type="checkbox"
+                  name="Interests"
+                  value="Digital Support"
                 />
                 <label
                   class="cursor-pointer border border-outline text-on-surface-variant px-4 py-2 rounded-full font-sans text-body-md transition-colors hover:bg-surface-container"
@@ -105,6 +117,8 @@ import BaseLayout from "../layouts/BaseLayout.astro";
                   class="hidden tag-checkbox"
                   id="tag-micro"
                   type="checkbox"
+                  name="Interests"
+                  value="Micro-volunteering"
                 />
                 <label
                   class="cursor-pointer border border-outline text-on-surface-variant px-4 py-2 rounded-full font-sans text-body-md transition-colors hover:bg-surface-container"
@@ -118,11 +132,12 @@ import BaseLayout from "../layouts/BaseLayout.astro";
               class="input-minimal w-full font-sans text-body-md text-on-surface resize-none"
               id="vol-message"
               placeholder="Briefly tell us why you want to join..."
-              rows="3"></textarea>
+              rows="3"
+              name="Reason to join"></textarea>
           </div>
           <button
             class="bg-secondary text-on-secondary font-display text-title-sm font-semibold px-8 py-3 rounded-lg hover:shadow-lg transition-all w-full md:w-auto"
-            type="button">Submit Interest</button
+            type="submit">Submit Interest</button
           >
         </form>
       </section>
