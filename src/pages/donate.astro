@@ -1,0 +1,240 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+
+const upiId = "120040147960@cnrb";
+const payeeName = "VASUDHAIVA KULAM TRUST";
+const merchantCode = "8398";
+const currency = "INR";
+const defaultAmounts = [100, 500, 1000, 2500];
+---
+
+<BaseLayout title="Donate | Vasudhaiva Kulam Trust">
+  <main class="mx-auto max-w-5xl px-5 py-10 sm:px-8">
+    <a
+      href="/"
+      class="inline-flex items-center gap-2 text-sm font-semibold text-orange-700 hover:text-orange-900"
+    >
+      <span aria-hidden="true">←</span> Back to website
+    </a>
+
+    <section
+      class="mt-8 overflow-hidden rounded-3xl bg-white shadow-xl ring-1 ring-orange-100"
+    >
+      <div
+        class="bg-gradient-to-br from-orange-600 via-amber-500 to-yellow-400 px-6 py-10 text-white sm:px-10"
+      >
+        <p class="text-sm font-bold uppercase tracking-widest">
+          Vasudhaiva Kulam Trust
+        </p>
+        <h1 class="mt-3 text-3xl font-extrabold sm:text-5xl">
+          Support our work
+        </h1>
+        <p class="mt-4 max-w-2xl text-base leading-7 text-white/90 sm:text-lg">
+          Your contribution helps Vasudhaiva Kulam Trust continue its charitable
+          and community work.
+        </p>
+      </div>
+
+      <div class="grid gap-10 p-6 sm:p-10 lg:grid-cols-[1.1fr_.9fr]">
+        <div>
+          <h2 class="text-2xl font-bold text-slate-900">Donate by UPI</h2>
+          <p class="mt-2 text-slate-600">
+            Choose an amount, then tap the UPI payment button. On mobile, your
+            installed UPI app should open.
+          </p>
+
+          <div class="mt-6 grid grid-cols-2 gap-3 sm:grid-cols-4">
+            {
+              defaultAmounts.map((amount) => (
+                <button
+                  type="button"
+                  class="donation-amount rounded-2xl border border-orange-200 bg-white px-4 py-4 font-bold text-orange-700 transition hover:border-orange-500 hover:bg-orange-50"
+                  data-amount={amount}
+                >
+                  ₹{amount.toLocaleString("en-IN")}
+                </button>
+              ))
+            }
+          </div>
+
+          <div class="mt-6">
+            <label
+              for="custom-amount"
+              class="block text-sm font-semibold text-slate-700"
+            >
+              Custom amount (₹)
+            </label>
+            <input
+              id="custom-amount"
+              inputmode="decimal"
+              type="number"
+              min="1"
+              step="1"
+              placeholder="Enter amount"
+              class="mt-2 w-full rounded-2xl border border-slate-300 px-4 py-4 text-lg outline-none transition focus:border-orange-500 focus:ring-4 focus:ring-orange-100"
+            />
+          </div>
+
+          <div class="mt-6 flex flex-col gap-3 sm:flex-row">
+            <button
+              id="pay-button"
+              type="button"
+              class="flex-1 rounded-2xl bg-orange-600 px-5 py-4 font-extrabold text-white shadow-lg transition hover:bg-orange-700"
+            >
+              Pay with UPI
+            </button>
+            <button
+              id="copy-button"
+              type="button"
+              class="rounded-2xl border border-slate-300 px-5 py-4 font-bold text-slate-800 transition hover:bg-slate-50"
+            >
+              Copy UPI ID
+            </button>
+          </div>
+
+          <p
+            id="status"
+            class="mt-4 min-h-6 text-sm font-semibold text-slate-600"
+            aria-live="polite"
+          >
+          </p>
+
+          <div class="mt-8 rounded-2xl bg-slate-50 p-5">
+            <p class="text-sm font-semibold text-slate-700">UPI ID</p>
+            <p class="mt-1 break-all text-lg font-extrabold text-slate-900">
+              {upiId}
+            </p>
+            <p class="mt-3 text-sm leading-6 text-slate-600">
+              You can also open any supported UPI app, choose “Pay by UPI ID”,
+              and enter this ID manually.
+            </p>
+          </div>
+
+          <div
+            class="mt-6 rounded-2xl border border-amber-200 bg-amber-50 p-5 text-sm leading-6 text-amber-900"
+          >
+            <strong>Please note:</strong> Keep your payment confirmation/screenshot.
+            For an official donation receipt or tax documentation, contact the Trust
+            using the contact details published on this website.
+          </div>
+        </div>
+
+        <aside
+          class="rounded-3xl border border-slate-200 bg-slate-50 p-6 text-center"
+        >
+          <h2 class="text-xl font-bold text-slate-900">Scan &amp; Pay</h2>
+          <p class="mt-2 text-sm leading-6 text-slate-600">
+            Scan this QR code with a supported UPI app. Enter your donation
+            amount in the payment app.
+          </p>
+
+          <div
+            class="mx-auto mt-6 flex max-w-xs justify-center rounded-3xl bg-white p-5 shadow-sm ring-1 ring-slate-200"
+          >
+            <img
+              src="/vasudhaiva-kulam-upi-qr.svg"
+              alt="UPI QR code for Vasudhaiva Kulam Trust"
+              width="280"
+              height="280"
+              class="h-auto w-full"
+            />
+          </div>
+
+          <p class="mt-5 text-xs leading-5 text-slate-500">
+            Payee: {payeeName}<br />
+            UPI: {upiId}
+          </p>
+        </aside>
+      </div>
+    </section>
+  </main>
+
+  <script define:vars={{ upiId, payeeName, merchantCode, currency }}>
+    const selectedAmount = { value: null };
+
+    const amountButtons = document.querySelectorAll(".donation-amount");
+    const customAmount = document.getElementById("custom-amount");
+    const payButton = document.getElementById("pay-button");
+    const copyButton = document.getElementById("copy-button");
+    const status = document.getElementById("status");
+
+    function setStatus(message, error = false) {
+      status.textContent = message;
+      status.className = error
+        ? "mt-4 min-h-6 text-sm font-semibold text-red-600"
+        : "mt-4 min-h-6 text-sm font-semibold text-slate-600";
+    }
+
+    function setSelectedAmount(amount) {
+      selectedAmount.value = amount;
+
+      amountButtons.forEach((button) => {
+        const active = Number(button.dataset.amount) === amount;
+        button.classList.toggle("bg-orange-600", active);
+        button.classList.toggle("text-white", active);
+        button.classList.toggle("border-orange-600", active);
+        button.classList.toggle("bg-white", !active);
+        button.classList.toggle("text-orange-700", !active);
+      });
+
+      customAmount.value = "";
+      setStatus(`Donation amount selected: ₹${amount.toLocaleString("en-IN")}`);
+    }
+
+    amountButtons.forEach((button) => {
+      button.addEventListener("click", () => {
+        setSelectedAmount(Number(button.dataset.amount));
+      });
+    });
+
+    customAmount.addEventListener("input", () => {
+      const amount = Number(customAmount.value);
+      selectedAmount.value =
+        Number.isFinite(amount) && amount >= 1 ? amount : null;
+
+      amountButtons.forEach((button) => {
+        button.classList.remove(
+          "bg-orange-600",
+          "text-white",
+          "border-orange-600",
+        );
+        button.classList.add("bg-white", "text-orange-700");
+      });
+    });
+
+    payButton.addEventListener("click", () => {
+      const amount = Number(selectedAmount.value);
+
+      if (!Number.isFinite(amount) || amount < 1) {
+        setStatus("Please select or enter a donation amount first.", true);
+        return;
+      }
+
+      const transactionRef = `VK${Date.now()}`;
+
+      const params = new URLSearchParams({
+        pa: upiId,
+        pn: payeeName,
+        mc: merchantCode,
+        tr: transactionRef,
+        tn: "Donation to Vasudhaiva Kulam Trust",
+        am: amount.toFixed(2),
+        cu: currency,
+      });
+
+      window.location.href = `upi://pay?${params.toString()}`;
+    });
+
+    copyButton.addEventListener("click", async () => {
+      try {
+        await navigator.clipboard.writeText(upiId);
+        setStatus("UPI ID copied: " + upiId);
+      } catch {
+        setStatus(
+          "Copy failed. Please copy this UPI ID manually: " + upiId,
+          true,
+        );
+      }
+    });
+  </script></BaseLayout
+>
